@@ -16,7 +16,7 @@ painter.forward(1000)
 painter.penup()
 painter.pensize(1)
 
-# Draw picnic cloth on the grass
+# Draw picnic cloth on the grass (solid red, no pattern)
 painter.goto(-150, -250)
 painter.pendown()
 painter.color("red")
@@ -29,6 +29,7 @@ for _ in range(2):
     painter.right(90)
 painter.end_fill()
 painter.penup()
+
 
 # Generate random star positions
 star_positions = []
@@ -48,7 +49,7 @@ for pos in star_positions:
         painter.forward(10)  # Changed from 20 to 10 for smaller stars
         painter.right(144)
     painter.end_fill()
-painter.penup() 
+painter.penup()
 # List of firework positions
 firework_spots = [(0,0), (200,200), (-200,150), (150,80), (-300,250),
                   (350,150), (-100,300), (50,180), (-350,100), (250,50)]
@@ -63,7 +64,7 @@ for spot in firework_spots:
     painter.goto(spot[0], spot[1])
     painter.speed(0)
     painter.pendown()
-    painter.pensize(1)
+    painter.pensize(5)
     painter.color("white")
     for i in range(12):
         painter.pencolor(firework_colors[i % len(firework_colors)])
